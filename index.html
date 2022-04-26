@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cool Music Player - MayankCoder123</title>
+  </head>
+  <body class="flex flex-col justify-center items-center h-screen bg-slate-50">
+    <div
+      class="w-[80%] md:4/6 lg:w-3/6 bg-slate-50 flex-wrap h-[70vh] lg:h-[80vh] flex-wrap shadow-2xl rounded-lg flex flex-col justify-center p-3 md:px-8"
+    >
+      <div class="flex flex-col">
+        <img
+          src="./img/music.png"
+          alt="Cool Music Player"
+          class="w-[15vh] h-[15vh] lg:w-[25vh] lg:h-[25vh] mx-auto mt-[5vh]"
+        />
+
+        <div
+          class="flex flex-col items-center text-slate-900 text-lg font-bold mx-auto mt-[5vh]"
+        >
+          <span id="track-name">Track Name</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col">
+        <div class="flex flex-col px-4 mt-[5vh]">
+          <div class="flex text-slate-900 font-bold text-lg px-4">
+            <div id="current-time">00:00</div>
+            <div id="total-time" class="ml-auto">00:00</div>
+          </div>
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="0"
+            id="time-slider"
+            class="w-full h-2 bg-blue-100 appearance-none mt-[5vh]"
+            onchange="seekTo()"
+          />
+        </div>
+
+        <div
+          class="flex items-center text-3xl md:text-4xl text-slate-900 mx-auto mt-[5vh] mb-3 md:mt-6"
+        >
+          <i
+            class="fa-solid fa-caret-left m-4"
+            id="prevTrack-btn"
+            onclick="prevTrack()"
+          ></i>
+          <i
+            class="fa-solid fa-play m-4"
+            id="play-btn"
+            onclick="togglePlayPause()"
+          ></i>
+          <i
+            class="fa-solid fa-pause hidden m-4"
+            id="pause-btn"
+            onclick="togglePlayPause()"
+          ></i>
+          <i
+            class="fa-solid fa-caret-right m-4"
+            id="nextTrack-btn"
+            onclick="nextTrack()"
+          ></i>
+        </div>
+      </div>
+    </div>
+
+    <small class="mt-[5vh] text-center">
+      Icons made by
+      <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from
+      <a href="https://www.flaticon.com/" title="Flaticon"
+        >www.flaticon.com'</a
+      ></small
+    >
+    <script src="./index.js"></script>
+  </body>
+</html>
